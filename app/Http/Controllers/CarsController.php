@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Car;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CarRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CarsController extends Controller
@@ -22,10 +22,10 @@ class CarsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  CarRequest  $request
+     * @return Car
      */
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {
         $car = new Car();
  
@@ -67,11 +67,11 @@ class CarsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  CarRequest  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Car
      */
-    public function update(Request $request, $id)
+    public function update(CarRequest $request, $id)
     {
         $car = Car::find($id);
  
