@@ -26,7 +26,7 @@ class CarRequest extends FormRequest
         return [
         'brand' => 'required|min:2',
         'model' => 'required|min:2',
-        'year' => 'required|numeric',
+        'year' => 'required|numeric|min:1990|max:2018',
         'maxSpeed' => 'numeric|min:20|max:300',
         'isAutomatic' => 'required|boolean',
         'engine' => 'required',

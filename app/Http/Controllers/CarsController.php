@@ -50,7 +50,13 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        return Car::find($id);
+        $car = Car::find($id);
+
+        if(!isset($car)) {
+            abort(404, "Car doesn't exist!!");
+        }
+        return $car;
+
     }
 
     /**
